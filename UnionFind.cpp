@@ -3,7 +3,7 @@ private:
     int N;
     int tree_cnt_data;
     std::vector<int> val;
-    
+
     int root(int x) {
         if(val[x] < 0) {
             return x;
@@ -14,12 +14,12 @@ private:
     }
 
 public:
-    UnionFind(int N_input) {
-        N = N_input;
-        tree_cnt_data = N_input;
-        val = std::vector<int> (N_input, -1);
+    UnionFind(int n) {
+        N = n;
+        tree_cnt_data = n;
+        val = std::vector<int> (n, -1);
     }
-    
+
     void unite(int x, int y) {
         x = root(x);
         y = root(y);
@@ -56,3 +56,4 @@ public:
         return (val[x] < 0 ? true : false);
     }
 };
+
