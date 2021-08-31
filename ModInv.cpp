@@ -18,7 +18,7 @@ private:
         return;
     }
 public:
-    ModInv (long long a, long long b, long long m) {
+    ModInv(long long a, long long b, long long m) {
         long long g = gcd(gcd(a, b), m);
         A = a / g;
         B = B_input / g;
