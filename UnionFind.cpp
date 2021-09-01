@@ -5,7 +5,7 @@ private:
     std::vector<int> val;
 
     int root(int x) {
-        if(val[x] < 0) {
+        if (val[x] < 0) {
             return x;
         }
         else {
@@ -23,10 +23,10 @@ public:
     void unite(int x, int y) {
         x = root(x);
         y = root(y);
-        if(x == y) {
+        if (x == y) {
             return;
         }
-        if(val[x] > val[y]) {
+        if (val[x] > val[y]) {
             std::swap(x, y);
         }
         val[x] += val[y];
@@ -36,7 +36,7 @@ public:
     }
 
     bool same(int x, int y) {
-        if(root(x) == root(y)) {
+        if (root(x) == root(y)) {
             return true;
         }
         else {

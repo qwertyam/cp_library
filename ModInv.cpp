@@ -2,13 +2,13 @@ struct ModInv {
 private:
     int A, B, M;
     long long gcd(long long a, long long b) {
-        if(b == 0) {
+        if (b == 0) {
             return a;
         }
         return gcd(b, a % b);
     }
     void ext_gcd(long long a,long long b, long long& x, long long& y) {
-        if(b == 0) {
+        if (b == 0) {
             x = 1;
             y = 1;
             return;
@@ -28,7 +28,7 @@ public:
         return (gcd(A, M) == 1 ? true : false);
     }
     long long X() {
-        if(exist() == false) {
+        if (exist() == false) {
             return -1;
         }
         long long x, y;
