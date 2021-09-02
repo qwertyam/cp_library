@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 // type = long long
 // update = range add query
 // range_calc = range max query
