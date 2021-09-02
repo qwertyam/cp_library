@@ -37,5 +37,5 @@ public:
         x = (x % M + M) % M;
         return x;
     }
-};
+}; // ModInv
 

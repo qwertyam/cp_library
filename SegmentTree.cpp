@@ -1,18 +1,32 @@
-template<typename T, T (*OP) (T, T), T (*E) ()>
+template <typename S>
 struct SegmentTree {
 private:
     int N;
     int sz;
-    std::vector<T> tree;
+    std::vector<S> tree;
+
+    S OP(S x, S y) {
+        /*
+        (example code)
+        return a + b;
+        */ 
+    }
+
+    S E() {
+        /*
+        (example code)
+        return 0; 
+        */
+    }
 
 public:
-    SegmentTree(const std::vector<T>& v) {
+    SegmentTree(const std::vector<S>& v) {
         N = 1;
         sz = (int) v.size();
         while (N < sz) {
             N *= 2; 
         }
-        tree = std::vector<T> (2 * N, E());
+        tree = std::vector<S> (2 * N, E());
         for (int i = 0; i < sz; i++) {
             tree[N + i] = v[i];
         }
@@ -21,12 +35,12 @@ public:
         }
     }
 
-    T get(int ind) const {
+    S get(int ind) const {
         assert(0 <= ind && ind < sz);
         return tree[N + ind];
     }
 
-    void update(int ind, T x) {
+    void update(int ind, S x) {
         assert(0 <= ind && ind < sz);
         ind += N;
         tree[ind] = x;
@@ -36,12 +50,12 @@ public:
         }
     }
 
-    T range_calc(int l, int r) {
+    S range_calc(int l, int r) {
         assert(0 <= l && l <= r && r < sz);
         l += N;
         r += N;
-        T l_res = E();
-        T r_res = E();
+        S l_res = E();
+        S r_res = E();
         while (l <= r) {
             if (l % 2 == 0) {
                 l /= 2; 
@@ -60,5 +74,5 @@ public:
         }
         return OP(l_res, r_res);
     }
-};
+}; // SegmentTree
 

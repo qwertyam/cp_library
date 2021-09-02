@@ -1,4 +1,4 @@
-template<typename T, T (*OP) (T, T)>
+template <typename T, T (*OP) (T, T)>
 struct SparseTable {
 private: 
     int sz;
@@ -35,5 +35,5 @@ public:
         int len = (1 << log_len);
         return OP(table[log_len][l], table[log_len][r - len + 1]);
     }
-};
+}; // SparseTable
 

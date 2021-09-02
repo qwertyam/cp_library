@@ -55,5 +55,5 @@ public:
     bool is_root(int x) {
         return (val[x] < 0 ? true : false);
     }
-};
+}; // UnionFind
 
