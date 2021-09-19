@@ -5,6 +5,8 @@ private:
     std::vector<int> val;
 
     int root(int x) {
+        assert(0 <= x && x < N);
+
         if (val[x] < 0) {
             return x;
         }
@@ -12,6 +14,7 @@ private:
             return val[x] = root(val[x]);
         }
     }
+
 
 public:
     UnionFind(int n) {
@@ -21,6 +24,9 @@ public:
     }
 
     void unite(int x, int y) {
+        assert(0 <= x && x < N);
+        assert(0 <= y && y < N);
+
         x = root(x);
         y = root(y);
         if (x == y) {
@@ -36,6 +42,9 @@ public:
     }
 
     bool same(int x, int y) {
+        assert(0 <= x && x < N);
+        assert(0 <= y && y < N);
+
         if (root(x) == root(y)) {
             return true;
         }
@@ -49,10 +58,14 @@ public:
     }
 
     int tree_size(int x) {
+        assert(0 <= x && x < N);
+
         return -val[root(x)];
     }
 
     bool is_root(int x) {
+        assert(0 <= x && x < N);
+
         return (val[x] < 0 ? true : false);
     }
 }; // UnionFind
