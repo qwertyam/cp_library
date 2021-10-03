@@ -8,7 +8,7 @@ private:
     S OP(S x, S y) {
         /*
         (example code)
-        return a + b;
+        return x + y;
         */ 
     }
 
