@@ -13,7 +13,7 @@ struct SparseTable {
 
 	public:
 		SparseTable() {}; 
-		SparseTable(const std::vector<T>& v);
+		explicit SparseTable(const std::vector<T>& v);
 
 		T range_calc(const int left, const int right) const; 
 };
