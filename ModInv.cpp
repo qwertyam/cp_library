@@ -1,18 +1,16 @@
 
 /* ---- ModInv (begin) ---- */
 
-#include <cassert>
-
 struct ModInv {
-	private:
-		long long A, B, M;
-		long long gcd(const long long a, const long long b) const;
-		void ext_gcd(const long long a, const long long b, long long& x, long long& y) const;
-	public:
-		ModInv();
-		ModInv(const long long a, const long long b, const long long m);
-		bool exist() const;
-		long long X() const;
+private:
+	long long A, B, M;
+	long long gcd(const long long a, const long long b) const;
+	void ext_gcd(const long long a, const long long b, long long& x, long long& y) const;
+public:
+	ModInv();
+	ModInv(const long long a, const long long b, const long long m);
+	bool exist() const;
+	long long X() const;
 };
 
 long long ModInv::gcd(const long long a, const long long b) const {
