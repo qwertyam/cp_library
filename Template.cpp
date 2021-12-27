@@ -2,11 +2,22 @@
 #include <bits/stdc++.h>
 
 namespace qwertyam {
+
+int d4r[] = {0, 1, 0, -1};
+int d4c[] = {1, 0, -1, 0};
+int d8r[] = {1, 1, 0, -1, -1, -1, 0, 1};
+int d8c[] = {0, 1, 1, 1, 0, -1, -1, -1};
+constexpr int MOD = 1000000007;
+// constexpr int MOD = 998244353;
+constexpr int INF = 1001001001;
+constexpr long long LINF = 1001002003004005006;
+template <typename T> void chmax(T& a, T b) {a = std::max(a, b);}
+template <typename T> void chmin(T& a, T b) {a = std::min(a, b);}
+
 struct MAIN {
 private:
 public:
 	void main() {
-		std::cout << "hello\n";
 		return;
 	}
 };
