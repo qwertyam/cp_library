@@ -1,72 +1,72 @@
 struct UnionFind {
-	private:
-		int N;
-		int tree_cnt_data;
-		std::vector<int> val;
+private:
+	int N;
+	int tree_cnt_data;
+	std::vector<int> val;
 
-		int root(int x) {
-			assert(0 <= x && x < N);
+	int root(int x) {
+		assert(0 <= x && x < N);
 
-			if (val[x] < 0) {
-				return x;
-			}
-			else {
-				return val[x] = root(val[x]);
-			}
+		if (val[x] < 0) {
+			return x;
 		}
-
-
-	public:
-		UnionFind(int n) {
-			N = n;
-			tree_cnt_data = n;
-			val = std::vector<int> (n, -1);
+		else {
+			return val[x] = root(val[x]);
 		}
+	}
 
-		void unite(int x, int y) {
-			assert(0 <= x && x < N);
-			assert(0 <= y && y < N);
 
-			x = root(x);
-			y = root(y);
-			if (x == y) {
-				return;
-			}
-			if (val[x] > val[y]) {
-				std::swap(x, y);
-			}
-			val[x] += val[y];
-			val[y] = x;
-			tree_cnt_data--;
+public:
+	UnionFind(int n) {
+		N = n;
+		tree_cnt_data = n;
+		val = std::vector<int> (n, -1);
+	}
+
+	void unite(int x, int y) {
+		assert(0 <= x && x < N);
+		assert(0 <= y && y < N);
+
+		x = root(x);
+		y = root(y);
+		if (x == y) {
 			return;
 		}
-
-		bool same(int x, int y) {
-			assert(0 <= x && x < N);
-			assert(0 <= y && y < N);
-
-			if (root(x) == root(y)) {
-				return true;
-			}
-			else {
-				return false;
-			}
+		if (val[x] > val[y]) {
+			std::swap(x, y);
 		}
+		val[x] += val[y];
+		val[y] = x;
+		tree_cnt_data--;
+		return;
+	}
 
-		int tree_cnt() {
-			return tree_cnt_data;
+	bool same(int x, int y) {
+		assert(0 <= x && x < N);
+		assert(0 <= y && y < N);
+
+		if (root(x) == root(y)) {
+			return true;
 		}
-
-		int tree_size(int x) {
-			assert(0 <= x && x < N);
-
-			return -val[root(x)];
+		else {
+			return false;
 		}
+	}
 
-		bool is_root(int x) {
-			assert(0 <= x && x < N);
+	int tree_cnt() {
+		return tree_cnt_data;
+	}
 
-			return (val[x] < 0 ? true : false);
-		}
+	int tree_size(int x) {
+		assert(0 <= x && x < N);
+
+		return -val[root(x)];
+	}
+
+	bool is_root(int x) {
+		assert(0 <= x && x < N);
+
+		return (val[x] < 0 ? true : false);
+	}
 }; // UnionFind
 

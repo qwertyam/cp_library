@@ -3,19 +3,19 @@
 
 template <typename T>
 struct SparseTable {
-	private:
-		std::size_t sz;
-		std::size_t log_sz;
-		std::vector<std::vector<T>> table;
-		std::vector<std::size_t> log_table;
+private:
+	std::size_t sz;
+	std::size_t log_sz;
+	std::vector<std::vector<T>> table;
+	std::vector<std::size_t> log_table;
 
-		T op(const T a, const T b) const;
+	T op(const T a, const T b) const;
 
-	public:
-		SparseTable() {}; 
-		explicit SparseTable(const std::vector<T>& v);
+public:
+	SparseTable() {}; 
+	explicit SparseTable(const std::vector<T>& v);
 
-		T range_calc(const int left, const int right) const; 
+	T range_calc(const int left, const int right) const; 
 };
 
 
