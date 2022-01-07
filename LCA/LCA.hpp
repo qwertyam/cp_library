@@ -24,7 +24,8 @@ private:
 	std::vector<std::vector<int>> parent_array; 
 
 	// make dist_array and parent_array
-	void make_array(int now_vertex, int parent_vertex, int now_dist, std::vector<std::vector<int>>& adjacency_list) {
+	void make_array(const int& now_vertex, const int& parent_vertex
+		,const int& now_dist, const std::vector<std::vector<int>>& adjacency_list) {
 		assert(0 <= now_vertex && now_vertex < (int) nv);
 		dist_array[now_vertex] = now_dist;
 		parent_array[0][now_vertex] = parent_vertex;
@@ -35,7 +36,7 @@ private:
 	}
 
 public:
-	LCA(const std::vector<std::vector<int>>& adjacency_list, const int root_vertex) {
+	LCA(const std::vector<std::vector<int>>& adjacency_list, const int& root_vertex) {
 		nv = adjacency_list.size();
 		log_nv = 1;
 		while ((1 << log_nv) < (int) nv) log_nv++;
