@@ -112,4 +112,4 @@ int main() {
 
 [AtCoder Beginner Contest 014 D - 閉路](https://atcoder.jp/contests/abc014/tasks/abc014_4)
 
-[実装例](https://atcoder.jp/contests/abc014/submissions/28359412)
+[実装例](https://atcoder.jp/contests/abc014/submissions/28359501)
