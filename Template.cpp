@@ -13,6 +13,13 @@ constexpr int INF = 1001001001;
 constexpr long long LINF = 1001002003004005006;
 template <typename T> void chmax(T& a, T b) {a = std::max(a, b);}
 template <typename T> void chmin(T& a, T b) {a = std::min(a, b);}
+long long pwmd(const long long& a, const long long& n) {
+	if (n == 0) return 1LL;
+	long long tmp = pwmd(a, n / 2);
+	tmp = tmp * tmp % MOD;
+	if (n % 2 == 1) tmp = tmp * a % MOD;
+	return tmp;
+}
 
 struct MAIN {
 private:

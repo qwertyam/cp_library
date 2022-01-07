@@ -1,8 +1,8 @@
 
 // ----- LCA (begin) -----
 
-#ifndef QWERTYAM_LCA_H 
-#define QWERTYAM_LCA_H
+#ifndef QWERTYAM_LCA_HPP 
+#define QWERTYAM_LCA_HPP
 
 #include <cassert>
 #include <vector>
@@ -16,6 +16,9 @@ private:
 
 	// round up of logarithm of nv
 	std::size_t log_nv;
+
+	// root of tree
+	int root;
 
 	// dist_array[v] : distance from root to v 
 	std::vector<int> dist_array; 
@@ -38,6 +41,7 @@ private:
 public:
 	LCA(const std::vector<std::vector<int>>& adjacency_list, const int& root_vertex) {
 		nv = adjacency_list.size();
+		root = root_vertex;
 		log_nv = 1;
 		while ((1 << log_nv) < (int) nv) log_nv++;
 		dist_array = std::vector<int> (nv);
@@ -52,7 +56,7 @@ public:
 	}
 
 	// find LCA of v1 and v2
-	int query(int v1, int v2) {
+	int get_lca(int v1, int v2) const {
 		assert(0 <= v1 && v1 < (int) nv);
 		assert(0 <= v2 && v2 < (int) nv);
 		if (dist_array[v1] < dist_array[v2]) std::swap(v1, v2);
@@ -71,6 +75,23 @@ public:
 			}
 		}
 		return parent_array[0][v1];
+	}
+
+	// get root of tree
+	int get_root() const {
+		return root;
+	}
+
+	// get distance from root
+	int get_dist(const int& vertex) const {
+		assert(0 <= vertex && vertex < (int) nv);
+		return dist_array[vertex];
+	}
+
+	// get parent of vertex (if none, then -1)
+	int get_parent(const int& vertex) const {
+		assert(0 <= vertex && vertex < (int) nv);
+		return parent_array[0][vertex];
 	}
 };
 
