@@ -59,11 +59,11 @@ public:
 		return size_or_parent[x] < 0;
 	}
 
-	int get_number_sets() const {
+	int set_count() const {
 		return ns;
 	}
 
-	int get_number_elements(const int& x) {
+	int size(const int& x) {
 		assert(0 <= x && x < n);
 		return -size_or_parent[leader(x)];
 	}

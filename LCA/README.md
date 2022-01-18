@@ -107,9 +107,3 @@ int main() {
 	return 0;
 }
 ```
-
-## 例題
-
-[AtCoder Beginner Contest 014 D - 閉路](https://atcoder.jp/contests/abc014/tasks/abc014_4)
-
-[実装例](https://atcoder.jp/contests/abc014/submissions/28359501)

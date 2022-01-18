@@ -74,9 +74,3 @@ int main() {
 }
 
 ```
-
-## 例題
-[AtCoder Beginner Contest 006 D - トランプ挿入ソート](https://atcoder.jp/contests/abc006/tasks/abc006_4)
-
-[実装例](https://atcoder.jp/contests/abc006/submissions/28487122)
-

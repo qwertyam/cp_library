@@ -68,20 +68,20 @@ bool is_leader(const int& x) const;
 
 時間計算量は O(1)
 
-## get_number_sets
+## set_count
 
 ```cpp
-int get_number_sets() const;
+int set_count() const;
 ```
 
 連結成分の個数を返す.
 
 時間計算量は O(1)
 
-## get_number_elements
+## size
 
 ```cpp
-int get_number_elements(const int& x);
+int size(const int& x);
 ```
 
 頂点 `x` が属する連結成分について, その連結成分に含まれる頂点の個数を返す.
@@ -101,9 +101,9 @@ int main() {
 	dsu.merge(1, 3);
 	dsu.merge(2, 3);
 
-	std::cout << dsu.get_number_sets() << std::endl;
+	std::cout << dsu.set_count() << std::endl;
 	// 2
-	std::cout << dsu.get_number_elements(0) << std::endl;
+	std::cout << dsu.size(0) << std::endl;
 	// 4
 	std::cout << (dsu.is_leader(4) ? "true" : "false") << std::endl;
 	// true
@@ -113,9 +113,3 @@ int main() {
 }
 
 ```
-
-## 例題
-
-[AtCoder Typical Contest 001 B - Union Find](https://atcoder.jp/contests/atc001/tasks/unionfind_a)
-
-[実装例](https://atcoder.jp/contests/atc001/submissions/28583738)
