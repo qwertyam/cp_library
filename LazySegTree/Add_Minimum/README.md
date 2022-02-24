@@ -58,6 +58,7 @@ T get(const int& index);
 ```cpp
 #include "Add_Minimum.hpp"
 #include <iostream>
+#include <vector>
 int main() {
 	std::vector<int> vec = {3, 1, 4, 1, 5};
 	qwertyam::LazySegTree_Add_Minimum<int> lseg(vec);
