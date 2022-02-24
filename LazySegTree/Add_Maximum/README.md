@@ -33,10 +33,10 @@ void range_add(int left, int right, T x);
 
 配列の要素数を N として, 時間計算量は O(log N).
 
-## range_min
+## range_max
 
 ```cpp
-T range_min(int left, int right);
+T range_max(int left, int right);
 ```
 
 区間最大値クエリを処理する. 区間 [`left`, `right` - 1] の最小値を返す.
@@ -58,6 +58,7 @@ T get(const int& index);
 ```cpp
 #include "Add_Maximum.hpp"
 #include <iostream>
+#include <vector>
 int main() {
 	std::vector<int> vec = {3, 1, 4, 1, 5};
 	qwertyam::LazySegTree_Add_Maximum<int> lseg(vec);
