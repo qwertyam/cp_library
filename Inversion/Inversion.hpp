@@ -1,11 +1,4 @@
 
-// ----- Inversion (begin) -----
-
-#ifndef QWERTYAM_INVERSION_HPP
-#define QWERTYAM_INVERSION_HPP
-
-#include <algorithm>
-
 // ----- SegTree (begin) -----
 #ifndef SEGTREE_HPP
 #define SEGTREE_HPP
@@ -94,9 +87,21 @@ public:
 		return tree[n2 + index];
 	}
 };
+} // namespace qwertyam
 
 #endif
 // ----- SegTree (end) -----
+
+
+// ----- Inversion (begin) -----
+
+#ifndef QWERTYAM_INVERSION_HPP
+#define QWERTYAM_INVERSION_HPP
+
+#include <algorithm>
+
+namespace qwertyam {
+
 template <typename T>
 T Inversion_seg_op(T a, T b) {return a + b;}
 
@@ -114,8 +119,9 @@ long long Inversion(const std::vector<T>& vec) {
 	}
 	return res;
 }
+
+} // namespace qwertyam
 #endif
 
 // ----- Inversion (end) -----
-} // namespace qwertyam
 
