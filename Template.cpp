@@ -1,4 +1,5 @@
 
+
 #include <bits/stdc++.h>
 
 namespace qwertyam {
@@ -11,18 +12,17 @@ constexpr int MOD = 1000000007;
 // constexpr int MOD = 998244353;
 constexpr int INF = 1001001001;
 constexpr long long LINF = 1001002003004005006;
-template <typename T> void chmax(T& a, T b) {a = std::max(a, b);}
-template <typename T> void chmin(T& a, T b) {a = std::min(a, b);}
-long long pwmd(const long long& a, const long long& n) {
-	if (n == 0) return 1LL;
-	long long tmp = pwmd(a, n / 2);
-	tmp = tmp * tmp % MOD;
-	if (n % 2 == 1) tmp = tmp * a % MOD;
-	return tmp;
-}
+template <typename T> void chmax(T& a, const T& b);
+template <typename T> void chmin(T& a, const T& b);
+long long pwmd(const long long& a, const long long& n);
+long long gcd(const long long& a, const long long& b);
+long long lcm(const long long& a, const long long& b);
+
 
 struct MAIN {
 private:
+
+
 public:
 	void main() {
 		return;
@@ -44,4 +44,38 @@ int main() {
 	return 0;
 }
 
+// -----------------------------------------------
+
+namespace qwertyam {
+
+template <typename T> 
+void chmax(T& a, const T& b) {
+	a = std::max(a, b);
+	return;
+}
+
+template <typename T>
+void chmin(T& a, const T& b) {
+	a = std::min(a, b);
+	return;
+}
+
+long long pwmd(const long long& a, const long long& n) {
+	if (n == 0) return 1LL;
+	long long tmp = pwmd(a, n / 2);
+	tmp = tmp * tmp % MOD;
+	if (n % 2 == 1) tmp = tmp * a % MOD;
+	return tmp;
+}
+
+long long gcd(const long long& a, const long long& b) {
+	if (b == 0) return a;
+	else return gcd(b, a % b);
+}
+
+long long lcm(const long long& a, const long long& b) {
+	return a / gcd(a, b) * b;
+}
+
+} // namespace qwertyam
 
