@@ -12,6 +12,7 @@ constexpr int MOD = 1000000007;
 // constexpr int MOD = 998244353;
 constexpr int INF = 1001001001;
 constexpr long long LINF = 1001002003004005006;
+constexpr char endl = '\n';
 template <typename T> void chmax(T& a, const T& b);
 template <typename T> void chmin(T& a, const T& b);
 long long pwmd(const long long& a, const long long& n);
