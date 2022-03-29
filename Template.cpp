@@ -21,10 +21,6 @@ long long lcm(const long long& a, const long long& b);
 
 
 struct MAIN {
-private:
-
-
-public:
 	void main() {
 		return;
 	}
