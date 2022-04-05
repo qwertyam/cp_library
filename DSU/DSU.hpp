@@ -24,7 +24,7 @@ private:
 	std::vector<int> size_or_parent;
 
 public:
-	DSU() {};
+	DSU() {}
 	explicit DSU(const int& N) {
 		n = N;
 		ns = N;
