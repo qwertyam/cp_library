@@ -12,8 +12,8 @@ constexpr int MOD = 1000000007;
 constexpr int INF = 1001001001;
 constexpr long long LINF = 1001002003004005006;
 constexpr char endl = '\n';
-template <typename T> void chmax(T& a, const T& b) {a = std::max(a, b);} 
-template <typename T> void chmin(T& a, const T& b) {a = std::min(a, b);}
+template <typename T> inline void chmax(T& a, const T& b) {a = std::max(a, b);} 
+template <typename T> inline void chmin(T& a, const T& b) {a = std::min(a, b);}
 
 struct MAIN {
 	void main() {
