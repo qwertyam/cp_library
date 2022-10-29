@@ -72,7 +72,7 @@ public:
 	}
 
 	void operator/=(const mint& x) {
-		val = mod(val * x.inv());
+		val = mod((val * x.inv()).val);
 	}
 
 	mint operator+() const {
